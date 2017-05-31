@@ -1,0 +1,40 @@
+﻿<Window x:Class="TestingSystem.View.StudentViews.StudentQuizView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TestingSystem.View.StudentViews"
+        xmlns:vm="clr-namespace:TestingSystem.ViewModel"
+        mc:Ignorable="d"
+        Title="StudentQuizView" SizeToContent="Height" MaxHeight="800" Width="400">
+    <Window.DataContext>
+        <vm:StudentViewModel />
+    </Window.DataContext>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="4*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Label Grid.ColumnSpan="2" Name="timer" Content="00:00:00" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" FontWeight="Bold"></Label>
+        <ScrollViewer Grid.Row="1" Grid.ColumnSpan="2" CanContentScroll="True" VerticalScrollBarVisibility="Auto">
+            <StackPanel Name="quizPanel" Grid.Row="1">
+                
+            </StackPanel>
+        </ScrollViewer>
+
+        <Button Name="prevBtn" Grid.Row="2" Grid.Column="0" Content="Previous" FontSize="24" FontWeight="Medium" Click="prevBtn_Click"></Button>
+        <Button Name="nextBtn" Grid.Row="2" Grid.Column="1" Content="Next" FontSize="24" FontWeight="Medium" Click="nextBtn_Click"></Button>
+        
+        <Button Grid.Row="3" Grid.ColumnSpan="2" Name="submitBtn" Content="Submit" FontSize="24" FontWeight="Medium" Click="submitBtn_Click"></Button>
+        <Button Grid.Row="4" Grid.ColumnSpan="2" Content="Back" FontSize="24" FontWeight="Medium" Click="Button_Click"></Button>
+    </Grid>
+</Window>
